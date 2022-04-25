@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+/* Positionnez la forme Popup */
+.menu {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.form-menu {
+    display: block;
+    position: fixed;
+    left: 49%;
+    top:5%;
+    transform: translate(-45%,5%);
+    border: 2px solid #666;
+    z-index: 9;
+}
+/* Styles pour le conteneur de la forme */
+.form-container {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+}
+/* Largeur complète pour les champs de saisie */
+.form-container input[type=text] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #eee;
+}
+/* Quand les entrées sont concentrées, faites quelque chose */
+.form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+/* Stylez le bouton de start game */
+.form-container .btn {
+    background-color: #8ebf42;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Planez les effets pour les boutons */
+.form-container .btn:hover {
+    opacity: 1;
+}

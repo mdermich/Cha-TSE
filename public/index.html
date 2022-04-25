@@ -1,0 +1,135 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Node Game</title>
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/chatBox.css">
+  <link rel="stylesheet" href="/css/chatPrompt.css">
+  <link rel="stylesheet" href="/css/newPlayerNotif.css">
+  <style>
+    canvas {
+      margin: auto;
+      display: flex;
+      border: 1px solid grey;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <!-- Game -->
+    <canvas
+            id="canvas"
+            width="800"
+            height="600"
+            style="background: url('/sprites/map.png')">
+    </canvas>
+    <!--<canvas class="canvas"
+            id="canvasCollider"
+            width="800"
+            height="600"
+            style="background: url('/sprites/map.png'); z-index: 2;">
+    </canvas>-->
+    <button type="button" id="disconnectbtn" style="position:absolute; top: 1%; left:73%; background-color: #008CBA; border: none;" >Disconnect</button>
+    <!-- Menu -->
+    <div class="menu" id="menu">
+      <div class="form-menu" id="form">
+        <form class="form-container">
+          <h2>Game Menu<Menu:c></Menu:c>
+          </h2>
+          <label for="username">
+            <strong>Username</strong>
+          </label>
+          <input type="text" id="username" placeholder="Your Username" name="username" maxlength="30" required>
+          <label for="character">
+            <strong>Character</strong>
+          </label>
+          <div id="myCarousel" class="carousel slide" data-interval="false" style="height: 55px;">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active" id="blackwidow">
+                <img src="/sprites/blackwidow-select.png" alt="Black Widow" style=" margin: auto;">
+              </div>
+
+              <div class="item" id="captainamerica_shield">
+                <img src="/sprites/captainamerica_shield-select.png" alt="Captain America" style=" margin: auto;">
+              </div>
+
+              <div class="item" id="gamora">
+                <img src="/sprites/gamora-select.png" alt="Gamora" style=" margin: auto;">
+              </div>
+
+              <div class="item" id="ironman">
+                <img src="/sprites/ironman-select.png" alt="Iron Man" style=" margin: auto;">
+              </div>
+
+              <div class="item" id="loki">
+                <img src="/sprites/loki-select.png" alt="Loki" style=" margin: auto;">
+              </div>
+
+              <div class="item" id="wintersoldier">
+                <img src="/sprites/wintersoldier-select.png" alt="Winter Soldier" style=" margin: auto;">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
+          </div>
+          <button type="submit" class="btn" id="Start">Start Game</button>
+        </form>
+      </div>
+    </div>
+
+    <!--User connected notification-->
+    <div class="notify"><span id="notifyType" class=""></span></div>
+
+    <!--Chat prompt-->
+    <div class="hover_bkgr_fricc" id="hover_bkgr_fricc">
+      <span class="helper"></span>
+      <div id="content_popup_prompt">
+          <div class="popupCloseButton" id="popupCloseButton">&times;</div>
+      </div>
+    </div>
+
+    <!-- Chat Box -->
+    <div class="chatboxx" id="chatbox">
+      <div class="chatboxCloseButton" id="chatboxCloseButton">&times;</div>
+      <div class="chat-window" id="messages">
+        
+      </div>
+      <form id="chat" class="chat-input" onsubmit="return false;">
+        <input id="chat-input" type="text" autocomplete="on" placeholder="Type a message" />
+        <button>
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="rgba(0,0,0,.38)"
+              d="M17,12L12,17V14H8V10H12V7L17,12M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z" />
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/game.js"></script>
+    <script src="/menu.js"></script>
+    <script src="/chatBox.js"></script>
+  </div>
+</body>
+
+</html>
