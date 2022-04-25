@@ -4,15 +4,18 @@ A 2D game representing the school Télécom Saint-Etienne with interactions betw
 ## Installation
 1. Clone this repo
 ```bash
-git clone https://github.com/mdermich/Cha-TSE.git```
+git clone https://github.com/mdermich/Cha-TSE.git
+```
 2. Install npm packages
 ```bash
-npm install```
+npm install
+```
 3. Run the app
 ```bash
-npm run devstart```
+npm run devstart
+```
 
-##Functionnalities
+## Functionnalities
 - When openning the game, a characters menu is displayed over the Game Map
 - The user can choose one character from a carousel and enter a username (the username is mandatory to enter the Game)
 - Connected users are stored on servers side in the players table 
