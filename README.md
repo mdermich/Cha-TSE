@@ -27,4 +27,10 @@ npm run devstart
 * Each time a message is sent, the time the message was sent and the sender are indicated.
 * A history of the last messages is kept, this history reappear if users meet again and accept to chat.
 
+## Built With
+* Node.js
+* HTML
+* CSS
+* npm
+
 [landing-page]: images/landing.png
